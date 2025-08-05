@@ -26,6 +26,7 @@ jobs:
         echo "deb [trusted=yes] https://alest-software.github.io/ubuntu ${codename} main" | sudo tee /etc/apt/sources.list.d/alest-software.list
         sudo apt update
         sudo apt install -y swig4.1 libpython3-dev
+        sudo apt install -y libfoonathan-memory-dev
         sudo apt install -y libfastcdr libfastdds
 
     - name: Build
