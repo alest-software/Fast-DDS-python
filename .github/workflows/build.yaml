@@ -25,7 +25,7 @@ jobs:
         codename=$(lsb_release -c -s)
         echo "deb [trusted=yes] https://alest-software.github.io/ubuntu ${codename} main" | sudo tee /etc/apt/sources.list.d/alest-software.list
         sudo apt update
-        if "${codename}" == "noble"; then
+        if [ "${codename}" = "noble" ]; then
           sudo apt remove -y swig
           sudo apt install -y swig4.1
         fi
