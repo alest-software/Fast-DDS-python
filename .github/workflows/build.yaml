@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        platform: [ubuntu-24.04] #, ubuntu-22.04-arm] #, ubuntu-24.04-arm]
+        platform: [ubuntu-24.04, ubuntu-22.04-arm] #, ubuntu-24.04-arm]
 
     runs-on: ${{ matrix.platform }}
 
@@ -34,10 +34,6 @@ jobs:
         sudo apt install -y libfoonathan-memory-dev
         sudo apt install -y swig4.1 libpython3-dev
         sudo apt install -y libfastcdr libfastdds
-        #apt list swig
-        #dpkg-query -S /usr/bin/swig4.0
-        swig4.1 -version
-        #/usr/bin/swig4.0 -version
 
     - name: Build
       run: |
