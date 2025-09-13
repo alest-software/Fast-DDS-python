@@ -1,10 +1,10 @@
-name: Build FastDDS
+name: Build FastDDS Python
 
 on:
   workflow_dispatch:
 
 jobs:
-  fastdds:
+  fastdds_python:
     strategy:
       fail-fast: false
       max-parallel: 1
