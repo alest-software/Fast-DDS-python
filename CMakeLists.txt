@@ -3,6 +3,7 @@ project(fastddspython_ex VERSION 2.3.0)
 
 set(CMAKE_PREFIX_PATH "/opt/fastdds")
 set(CMAKE_INSTALL_PREFIX "/opt/fastdds")
+set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/fastdds")
 
 add_subdirectory(Fast-DDS-python/fastdds_python)
 
