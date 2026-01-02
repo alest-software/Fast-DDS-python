@@ -34,18 +34,20 @@ jobs:
         sudo apt install -y libp11-dev
         sudo apt install -y softhsm2
         sudo apt install -y libengine-pkcs11-openssl
-        sudo apt install -y libfoonathan-memory-dev
+        #sudo apt install -y libfoonathan-memory-dev
+        sudo apt install -y foonathan-memory
         sudo apt install -y libpython3-dev
         sudo apt install -y libfastcdr libfastdds
 
     - name: Build
       run: |
-        mkdir build
-        cd build
-        ARCH=$(dpkg --print-architecture)
-        cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
-        cmake --build .
-        cpack
+        #mkdir build
+        #cd build
+        #ARCH=$(dpkg --print-architecture)
+        #cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
+        #cmake --build .
+        #cpack
+        make -f actions.mk
         
     - name: Deploy
       run: |
