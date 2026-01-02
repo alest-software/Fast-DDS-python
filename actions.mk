@@ -6,7 +6,7 @@ current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
 architecture = $(shell dpkg --print-architecture)
 GITHUB_RUN_NUMBER ?= 0
 
-package = libfastdds-python
+package = fastdds-python
 version = 2.3.0
 build_number = $(GITHUB_RUN_NUMBER)
 source_dir = $(current_dir)/src

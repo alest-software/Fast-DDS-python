@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        platform: [ubuntu-24.04, ubuntu-22.04-arm] #, ubuntu-24.04-arm]
+        platform: [ubuntu-24.04, ubuntu-22.04-arm, ubuntu-24.04-arm]
 
     runs-on: ${{ matrix.platform }}
 
@@ -35,10 +35,10 @@ jobs:
         sudo apt install -y libp11-dev
         sudo apt install -y softhsm2
         sudo apt install -y libengine-pkcs11-openssl
-        #sudo apt install -y libfoonathan-memory-dev
-        sudo apt install -y foonathan-memory
         sudo apt install -y libpython3-dev
-        sudo apt install -y libfastcdr libfastdds
+        #sudo apt install -y libfoonathan-memory-dev
+        sudo apt install -y fastdds-foonathan-memory
+        sudo apt install -y fastdds-libfastcdr fastdds-libfastdds
 
     - name: Build
       run: |
